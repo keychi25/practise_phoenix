@@ -1,0 +1,39 @@
+<h1>New Lesson</h1>
+
+<%= form_for @changeset, lesson_path(@conn, :create), fn f -> %>
+<%= if @changeset.action do %>
+<div class="alert alert-danger">
+  <p>エラーです、以下のメッセージを確認してください</p>
+</div>
+<% end %>
+
+<div class="form-group">
+  <%= text_input f, :name, placeholder: "Name", class: "form-control" %>
+  <%= error_tag f, :name %>
+</div>
+<div class="form-group">
+  <%= text_input f, :place, placeholder: "Place", class: "form-control" %>
+  <%= error_tag f, :place %>
+</div>
+<div class="form-group">
+  <%= text_input f, :professor, placeholder: "Professor", class: "form-control" %>
+  <%= error_tag f, :professor %>
+</div>
+<div class="form-group">
+  <%= text_input  f, :year, placeholder: "Year", class: "form-control" %>
+  <%= error_tag f, :year %>
+</div>
+<div class="form-group">
+  <%= select  f, :semester, ["春": "Spring", "秋": "Autumn"], class: "form-control" %>
+  <%= error_tag f, :semester %>
+</div>
+<div class="form-group">
+  <%= text_input  f, :day_of_the_week, placeholder: "Day_of_the_week", class: "form-control" %>
+  <%= error_tag f, :day_of_the_week %>
+</div>
+<div class="form-group">
+  <%= text_input  f, :time, placeholder: "Time", class: "form-control" %>
+  <%= error_tag f, :time %>
+</div>
+<%= submit "Create Lesson", class: "btn btn-primary" %>
+<% end %>

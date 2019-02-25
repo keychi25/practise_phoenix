@@ -1,0 +1,11 @@
+<div class="row">
+  <aside class="col-md-4">
+    <%= for lesson <- @lessons do %>
+    <section>
+      <%= render "lesson.html", lesson: lesson, conn: @conn %>
+      <%= link "Show", to: lesson_path(@conn, :show, lesson), class: "btn btn-default btn-xs" %>
+      <%= link "Edit", to: lesson_path(@conn, :edit, lesson), class: "btn btn-default btn-xs" %>
+    </section>
+    <% end %>
+  </aside>
+</div>

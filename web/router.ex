@@ -22,7 +22,7 @@ defmodule PractisePhoenix.Router do
       pipe_through [:authenticate_user]
     end
 
-    resources "/lessons", LessonsController do
+    resources "/lessons", LessonController do
       pipe_through [:authenticate_user]
     end
 

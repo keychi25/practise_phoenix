@@ -1,0 +1,47 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>error! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+  <%= label f, :name, class: "control-label" %>
+    <%= text_input f, :name, placeholder: "Name", class: "form-control" %>
+    <%= error_tag f, :name %>
+  </div>
+  <div class="form-group">
+  <%= label f, :place, class: "control-label" %>
+    <%= text_input f, :place, placeholder: "Place", class: "form-control" %>
+    <%= error_tag f, :place %>
+  </div>
+  <div class="form-group">
+  <%= label f, :professor, class: "control-label" %>
+    <%= text_input f, :professor, placeholder: "Professor", class: "form-control" %>
+    <%= error_tag f, :professor %>
+  </div>
+  <div class="form-group">
+  <%= label f, :year, class: "control-label" %>
+    <%= text_input  f, :year, placeholder: "Year", class: "form-control" %>
+    <%= error_tag f, :year %>
+  </div>
+  <div class="form-group">
+  <%= label f, :semester, class: "control-label" %>
+    <%= select  f, :semester, ["春": "Spring", "秋": "Autumn"], class: "form-control" %>
+    <%= error_tag f, :semester %>
+  </div>
+  <div class="form-group">
+  <%= label f, :day_of_the_week, class: "control-label" %>
+    <%= text_input  f, :day_of_the_week, placeholder: "Day_of_the_week", class: "form-control" %>
+    <%= error_tag f, :day_of_the_week %>
+  </div>
+  <div class="form-group">
+  <%= label f, :time, class: "control-label" %>
+    <%= text_input  f, :time, placeholder: "Time", class: "form-control" %>
+    <%= error_tag f, :time %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
