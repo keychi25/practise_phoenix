@@ -14,7 +14,6 @@ def index(conn, _params) do
   end
 
   def create(conn, %{"user" => user_params}) do
-    # ここをregistration_changesetに変更
     changeset = User.registration_changeset(%User{}, user_params)
     case Repo.insert(changeset) do
       {:ok, user} ->

@@ -31,7 +31,6 @@ body, form, ul, table {
   display: inline-block;
   margin-top: 0.5em;
   margin-bottom: 1em;
-  background-image: url("/images/phoenix.png");
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

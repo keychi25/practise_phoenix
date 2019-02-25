@@ -4,13 +4,15 @@ defmodule PractisePhoenix.User do
   schema "users" do
     field :name, :string
     field :email, :string
+    field :year, :string
+    field :grade, :string
     field :password, :string, virtual: true
     field :password_hash, :string
 
     timestamps()
   end
 
-  @required_fields ~w(name email)
+  @required_fields ~w(name email year grade)
   @optional_fields ~w()
 
   def changeset(model, params \\ %{}) do

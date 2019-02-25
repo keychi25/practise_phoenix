@@ -5,9 +5,11 @@ defmodule PractisePhoenix.Repo.Migrations.CreateUser do
     create table(:users) do
       add :name, :string
       add :email, :string, null: false
+      add :year, :string
+      add :grade, :string
       add :password_hash, :string
 
-      timestamps
+      timestamps()
     end
 
     create unique_index(:users, [:email])

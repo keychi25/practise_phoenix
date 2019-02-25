@@ -19,5 +19,13 @@
   <%= password_input f, :password, placeholder: "Password", class: "form-control" %>
   <%= error_tag f, :password %>
 </div>
+<div class="form-group">
+  <%= text_input  f, :year, placeholder: "Year", class: "form-control" %>
+  <%= error_tag f, :year %>
+</div>
+<div class="form-group">
+  <%= text_input  f, :grade, placeholder: "Grade", class: "form-control" %>
+  <%= error_tag f, :grade %>
+</div>
 <%= submit "Create User", class: "btn btn-primary" %>
 <% end %>
