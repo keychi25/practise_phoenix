@@ -24,11 +24,11 @@
   <%= error_tag f, :year %>
 </div>
 <div class="form-group">
-  <%= select  f, :semester, ["春": "Spring", "秋": "Autumn"], class: "form-control" %>
+  <%= select  f, :semester, ["Spring": "Spring", "Autumn": "Autumn"], class: "form-control" %>
   <%= error_tag f, :semester %>
 </div>
 <div class="form-group">
-  <%= text_input  f, :day_of_the_week, placeholder: "Day_of_the_week", class: "form-control" %>
+  <%= select  f, :day_of_the_week, ["日": "Sun.", "月": "Mon.", "火": "Tue.", "水": "Wed.", "木": "Thu.", "金": "Fri.", "土": "Sat."], class: "form-control" %>
   <%= error_tag f, :day_of_the_week %>
 </div>
 <div class="form-group">

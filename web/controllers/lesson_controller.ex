@@ -1,7 +1,6 @@
 defmodule PractisePhoenix.LessonController do
   use PractisePhoenix.Web, :controller
   alias PractisePhoenix.Lesson
-  plug :authenticate_user when action in [:index, :show, :edit, :update, :delete]
 
   def index(conn, _params) do
     lessons = Repo.all(Lesson)

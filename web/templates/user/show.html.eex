@@ -2,12 +2,12 @@
   <aside class="col-md-4">
     <section>
       <%= render "user.html", user: @user, conn: @conn %>
-      <%= link "Edit", to: user_path(@conn, :edit, @user), class: "btn btn-default btn-xs" %>
+      <%= link "Edit", to: user_path(@conn, :edit, @user), class: "btn btn-default btn-sm" %>
       <%= button "Delete", to: user_path(@conn, :delete, @user),
       method: :delete,
       onclick: "return confirm(\"本当に削除しますか?\");",
-      class: "btn btn-danger btn-xs" %>
-      <%= link "Back", to: user_path(@conn, :index), class: "btn btn-default btn-xs"%>
+      class: "btn btn-danger btn-sm" %>
+      <%= link "Back", to: user_path(@conn, :index), class: "btn btn-default btn-sm"%>
     </section>
   </aside>
  </div>

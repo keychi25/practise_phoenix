@@ -26,6 +26,6 @@ defmodule PractisePhoenix.Router do
       pipe_through [:authenticate_user]
     end
 
-    resources "/sessions", SessionController, only: [:new, :create, :delete]
+    resources "/session", SessionController, only: [:new, :create, :delete]
   end
 end
