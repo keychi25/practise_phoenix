@@ -27,18 +27,18 @@
   </div>
   <div class="form-group">
   <%= label f, :semester, class: "control-label" %>
-    <%= select  f, :semester, ["春": "Spring", "秋": "Autumn"], class: "form-control" %>
-    <%= error_tag f, :semester %>
+  <%= select  f, :semester, ["Spring": "Spring", "Autumn": "Autumn"], class: "form-control" %>
+  <%= error_tag f, :semester %>
   </div>
   <div class="form-group">
   <%= label f, :day_of_the_week, class: "control-label" %>
-    <%= text_input  f, :day_of_the_week, placeholder: "Day_of_the_week", class: "form-control" %>
-    <%= error_tag f, :day_of_the_week %>
+  <%= select  f, :day_of_the_week, ["日": "日", "月": "月", "火": "火", "水": "水", "木": "木", "金": "金", "土": "土"], class: "form-control" %>
+  <%= error_tag f, :day_of_the_week %>
   </div>
   <div class="form-group">
   <%= label f, :time, class: "control-label" %>
-    <%= text_input  f, :time, placeholder: "Time", class: "form-control" %>
-    <%= error_tag f, :time %>
+  <%= select  f, :time, ["1限目": "1", "2限目": "2", "3限目": "3", "4限目": "4", "5限目": "5", "6限目": "6"], class: "form-control" %>
+  <%= error_tag f, :time %>
   </div>
 
   <div class="form-group">

@@ -28,11 +28,11 @@
   <%= error_tag f, :semester %>
 </div>
 <div class="form-group">
-  <%= select  f, :day_of_the_week, ["日": "Sun.", "月": "Mon.", "火": "Tue.", "水": "Wed.", "木": "Thu.", "金": "Fri.", "土": "Sat."], class: "form-control" %>
+  <%= select  f, :day_of_the_week, ["日": "日", "月": "月", "火": "火", "水": "水", "木": "木", "金": "金", "土": "土"], class: "form-control" %>
   <%= error_tag f, :day_of_the_week %>
 </div>
 <div class="form-group">
-  <%= text_input  f, :time, placeholder: "Time", class: "form-control" %>
+  <%= select  f, :time, ["1限目": "1", "2限目": "2", "3限目": "3", "4限目": "4", "5限目": "5", "6限目": "6"], class: "form-control" %>
   <%= error_tag f, :time %>
 </div>
 <%= submit "Create Lesson", class: "btn btn-primary" %>

@@ -1,5 +1,5 @@
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-12">
     <%= for lesson <- @lessons do %>
     <section>
       <%= render "lesson.html", lesson: lesson, conn: @conn %>

@@ -1,0 +1,12 @@
+<div class="row">
+  <aside class="col-md-4">
+    <%= for user <- @users do %>
+    <section>
+      <%= render "user.html", user: user, conn: @conn %>
+      <%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-sm" %>
+      <%= link "Edit", to: user_path(@conn, :edit, user), class: "btn btn-default btn-sm" %>
+    </section>
+    <% end %>
+     <%= link "Register", to: user_path(@conn, :new), class: "btn btn-primary btn-sm" %>
+  </aside>
+</div>

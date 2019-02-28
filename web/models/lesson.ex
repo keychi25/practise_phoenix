@@ -20,6 +20,5 @@ defmodule PractisePhoenix.Lesson do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> validate_length(:name, min: 1, max: 30)
-    |> validate_length(:year, min: 4, max: 4)
   end
 end
