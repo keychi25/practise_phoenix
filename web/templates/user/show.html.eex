@@ -2,7 +2,7 @@
   <aside class="col-md-4">
     <section>
       <%= render "user.html", user: @user, conn: @conn %>
-      <%= link "Timetable", to: user_lesson_path(@conn, :timetable, @current_user.id), class: "btn btn-primary btn-sm" %>
+      <%= link "Timetable", to: user_lesson_path(@conn, :timetable, @user.id), class: "btn btn-primary btn-sm" %>
       <%= if @current_user.id == @user.id do
        link "Edit", to: user_path(@conn, :edit, @user), class: "btn btn-default btn-sm"
       end%>

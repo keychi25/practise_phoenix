@@ -8,7 +8,8 @@ defmodule PractisePhoenix.UserLessonController do
   def index(conn, _params) do
     user_lessons = Repo.all(UserLesson)
     lessons = Repo.all(Lesson)
-    render conn, "index.html", user_lessons: user_lessons, lessons: lessons
+    changeset = UserLesson.changeset(%UserLesson{})
+    render conn, "index.html", user_lessons: user_lessons, lessons: lessons, changeset: changeset
   end
 
   def new(conn, _params) do
@@ -38,10 +39,10 @@ defmodule PractisePhoenix.UserLessonController do
     |> redirect(to: user_lesson_path(conn, :index))
   end
 
-  def timetable(conn, _params) do
+  def timetable(conn, %{"id" => id}) do
     user_lessons = Repo.all(UserLesson)
     lessons = Repo.all(Lesson)
-    render conn, "timetable.html", user_lessons: user_lessons, lessons: lessons
+    render conn, "timetable.html", user_lessons: user_lessons, lessons: lessons, id: id
   end
 
 end

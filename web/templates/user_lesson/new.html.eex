@@ -2,8 +2,8 @@
 
 <div class="row">
   <aside class="col-md-12">
-  <%= form_for @changeset, user_lesson_path(@conn, :create), fn f -> %>
     <%= for lesson <- @lessons do %>
+    <%= form_for @changeset, user_lesson_path(@conn, :create), fn f -> %>
     <section>
     <%= lesson.name%><br>
     <%= link "Show", to: lesson_path(@conn, :show, lesson), class: "btn btn-default btn-sm" %>

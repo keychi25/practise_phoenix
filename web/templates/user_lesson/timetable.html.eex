@@ -18,78 +18,401 @@
       <td>
         <%= for user_lesson <- @user_lessons do %>
             <%= for lesson <- @lessons do %>
-              <%= if UserLesson.get_lesson(user_lesson, lesson, @current_user.id, "日", 1) do %>
+              <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "日", 1) do %>
               <%= lesson.name %>
               <%end%>
             <% end %>
          <% end %>
       </td>
       <td>
+      <%= for user_lesson <- @user_lessons do %>
+            <%= for lesson <- @lessons do %>
+               <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "月", 1) do %>
+               <%= lesson.name %>
+               <%end%>
+            <% end %>
+       <% end %>
       </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                     <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "火", 1) do %>
+                     <%= lesson.name %>
+                     <%end%>
+                  <% end %>
+             <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                     <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "水", 1) do %>
+                     <%= lesson.name %>
+                     <%end%>
+                  <% end %>
+             <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                     <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "木", 1) do %>
+                     <%= lesson.name %>
+                     <%end%>
+                  <% end %>
+             <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                     <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "金", 1) do %>
+                     <%= lesson.name %>
+                     <%end%>
+                  <% end %>
+             <% end %>
+</td>
+      <td>
+        <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "土", 1) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
       <td>8:50~10:20</td>
       </tr>
       <tr>
       <td>2</td>
       <td>
+      <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                    <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "日", 2) do %>
+                    <%= lesson.name %>
+                    <%end%>
+                  <% end %>
+               <% end %>
       </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>  <%= for user_lesson <- @user_lessons do %>
+                            <%= for lesson <- @lessons do %>
+                               <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "月", 2) do %>
+                               <%= lesson.name %>
+                               <%end%>
+                            <% end %>
+                       <% end %></td>
+      <td>
+        <%= for user_lesson <- @user_lessons do %>
+                          <%= for lesson <- @lessons do %>
+                             <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "火", 2) do %>
+                             <%= lesson.name %>
+                             <%end%>
+                          <% end %>
+                     <% end %>
+</td>
+      <td>
+       <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "水", 2) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "木", 2) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "金", 2) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+
+      <%= for user_lesson <- @user_lessons do %>
+                              <%= for lesson <- @lessons do %>
+                                 <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "土", 2) do %>
+                                 <%= lesson.name %>
+                                 <%end%>
+                              <% end %>
+                         <% end %>
+</td>
+
       <td>10:30~12:00</td>
       </tr>
       <tr>
       <td>3</td>
       <td>
+      <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                   <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "日", 3) do %>
+                    <%= lesson.name %>
+                    <%end%>
+                  <% end %>
+               <% end %>
       </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>
+        <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                     <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "月", 3) do %>
+                     <%= lesson.name %>
+                     <%end%>
+                  <% end %>
+             <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "火", 3) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+       <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "水", 3) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "木", 3) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "金", 3) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                                    <%= for lesson <- @lessons do %>
+                                       <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "土", 3) do %>
+                                       <%= lesson.name %>
+                                       <%end%>
+                                    <% end %>
+                               <% end %>
+
+</td>
       <td>12:50~14:20</td>
       </tr>
       <tr>
       <td>4</td>
       <td>
+      <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                    <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "日", 4) do %>
+                    <%= lesson.name %>
+                    <%end%>
+                  <% end %>
+               <% end %>
       </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>
+        <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                     <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "月", 4) do %>
+                     <%= lesson.name %>
+                     <%end%>
+                  <% end %>
+             <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "火", 4) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+       <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "水", 4) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "木", 4) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "金", 4) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                                    <%= for lesson <- @lessons do %>
+                                       <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "土", 4) do %>
+                                       <%= lesson.name %>
+                                       <%end%>
+                                    <% end %>
+                               <% end %>
+</td>
       <td>14:30~16:00</td>
       </tr>
       <tr>
       <td>5</td>
       <td>
+      <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                    <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "日", 5) do %>
+                    <%= lesson.name %>
+                    <%end%>
+                  <% end %>
+               <% end %>
       </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>
+        <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                     <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "月", 5) do %>
+                     <%= lesson.name %>
+                     <%end%>
+                  <% end %>
+             <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "火", 5) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+       <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "水", 5) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "木", 5) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "金", 5) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                                    <%= for lesson <- @lessons do %>
+                                       <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "土", 5) do %>
+                                       <%= lesson.name %>
+                                       <%end%>
+                                    <% end %>
+                               <% end %>
+</td>
       <td>16:10~17:40</td>
       </tr>
       <td>6</td>
       <td>
+      <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                    <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "日", 6) do %>
+                    <%= lesson.name %>
+                    <%end%>
+                  <% end %>
+               <% end %>
       </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>
+        <%= for user_lesson <- @user_lessons do %>
+                  <%= for lesson <- @lessons do %>
+                     <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "月", 6) do %>
+                     <%= lesson.name %>
+                     <%end%>
+                  <% end %>
+             <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "火", 6) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+       <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "水", 6) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "木", 6) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                        <%= for lesson <- @lessons do %>
+                           <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "金", 6) do %>
+                           <%= lesson.name %>
+                           <%end%>
+                        <% end %>
+                   <% end %>
+</td>
+      <td>
+      <%= for user_lesson <- @user_lessons do %>
+                                    <%= for lesson <- @lessons do %>
+                                       <%= if UserLesson.get_lesson(user_lesson, lesson, String.to_integer(@id), "土", 6) do %>
+                                       <%= lesson.name %>
+                                       <%end%>
+                                    <% end %>
+                               <% end %>
+</td>
       <td>18:00~19:30</td>
       </tr>
       </table>
