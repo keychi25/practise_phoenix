@@ -7,7 +7,7 @@ defmodule PractisePhoenix.Lesson do
     field :professor, :string ## 教授名
     field :year, :integer ## 年
     field :semester, :string ## 開設学期(Spring or Autumn)
-    field :day_of_the_week ## 曜日
+    field :day_of_the_week, :string ## 曜日
     field :time, :integer ## 時限
 
     timestamps()

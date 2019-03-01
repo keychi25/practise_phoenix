@@ -7,7 +7,6 @@
       method: :delete,
       onclick: "return confirm(\"本当に削除しますか?\");",
       class: "btn btn-danger btn-sm" %>
-      <%= link "Back", to: lesson_path(@conn, :index), class: "btn btn-default btn-sm"%>
     </section>
   </aside>
  </div>

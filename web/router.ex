@@ -26,6 +26,11 @@ defmodule PractisePhoenix.Router do
       pipe_through [:authenticate_user]
     end
 
+    resources "/userLesson", UserLessonController do
+      pipe_through [:authenticate_user]
+    end
+    get "/timetable/:id", UserLessonController, :timetable
+
     resources "/session", SessionController, only: [:new, :create, :delete]
   end
 end

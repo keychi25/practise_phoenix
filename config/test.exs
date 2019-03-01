@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :practise_phoenix, PractisePhoenix.Repo,
   adapter: Ecto.Adapters.MySQL,
   username: "root",
-  password: "",
+  password: "root",
   database: "practise_phoenix_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

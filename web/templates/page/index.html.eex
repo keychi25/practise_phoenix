@@ -5,7 +5,7 @@
   </div>
   <div class="col-lg-6">
   <h3>授業</h3>
-  <%= link "Index", to: lesson_path(@conn, :index), class: "btn btn-default btn-sm" %>
+  <%= link "Index", to: user_lesson_path(@conn, :index), class: "btn btn-default btn-sm" %>
   </div>
 </div>
 

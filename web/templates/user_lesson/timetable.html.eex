@@ -1,0 +1,97 @@
+<% alias PractisePhoenix.UserLesson %>
+<div class="row">
+  <aside class="col-md-12">
+      <table class="table table-bordered">
+      <tr>
+      <th>時限/曜日</th>
+      <th class="def_color_red">日曜日</th>
+      <th>月曜日</th>
+      <th>火曜日</th>
+      <th>水曜日</th>
+      <th>木曜日</th>
+      <th>金曜日</th>
+      <th class="def_color_blue">土曜日</th>
+      <th >時間</th>
+      </tr>
+      <tr>
+      <td>1</td>
+      <td>
+        <%= for user_lesson <- @user_lessons do %>
+            <%= for lesson <- @lessons do %>
+              <%= if UserLesson.get_lesson(user_lesson, lesson, @current_user.id, "日", 1) do %>
+              <%= lesson.name %>
+              <%end%>
+            <% end %>
+         <% end %>
+      </td>
+      <td>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>8:50~10:20</td>
+      </tr>
+      <tr>
+      <td>2</td>
+      <td>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>10:30~12:00</td>
+      </tr>
+      <tr>
+      <td>3</td>
+      <td>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>12:50~14:20</td>
+      </tr>
+      <tr>
+      <td>4</td>
+      <td>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>14:30~16:00</td>
+      </tr>
+      <tr>
+      <td>5</td>
+      <td>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>16:10~17:40</td>
+      </tr>
+      <td>6</td>
+      <td>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>18:00~19:30</td>
+      </tr>
+      </table>
+  </aside>
+</div>

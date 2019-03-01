@@ -1,0 +1,27 @@
+<div class="row">
+<aside class="col-md-12">
+<h3>・登録済みの授業</h3>
+<%= for user_lesson <- @user_lessons do %>
+<%= for lesson <- @lessons do %>
+<%= if user_lesson.lesson_id == lesson.id && user_lesson.user_id == @current_user.id do %>
+ <section>
+      <%= render "user_lesson.html", lesson: lesson, conn: @conn %>
+      <%= link "Show", to: lesson_path(@conn, :show, lesson), class: "btn btn-primary btn-sm" %>
+      <%= link "Edit", to: lesson_path(@conn, :edit, lesson), class: "btn btn-default btn-sm" %>
+      <%= link "Delete", to: user_lesson_path(@conn, :delete, user_lesson), class: "btn btn-danger btn-sm" %>
+ </section>
+ <% end %>
+ <% end %>
+    <% end %>
+</aside>
+  <aside class="col-md-12">
+  <h3>・全ての授業</h3>
+    <%= for lesson <- @lessons do %>
+    <section>
+      <%= render "user_lesson.html", lesson: lesson, conn: @conn %>
+      <%= link "Show", to: lesson_path(@conn, :show, lesson), class: "btn btn-primary btn-sm" %>
+      <%= link "Edit", to: lesson_path(@conn, :edit, lesson), class: "btn btn-default btn-sm" %>
+    </section>
+    <% end %>
+  </aside>
+</div>

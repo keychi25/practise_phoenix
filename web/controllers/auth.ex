@@ -21,7 +21,6 @@ defmodule PractisePhoenix.Auth do
 
     cond do
       user && checkpw(given_pass, user.password_hash) ->
-        # ここでpasswordのチェックが成功した場合にloginメソッドを呼び出してセッションにユーザーのidを保存しています(処理はloginメソッドに委譲しています)
         {:ok, login(conn, user)}
       user ->
         {:error, :unauthorized, conn}
