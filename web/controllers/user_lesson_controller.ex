@@ -30,9 +30,14 @@ defmodule PractisePhoenix.UserLessonController do
     end
   end
 
+  def show(conn, %{"id" => id}) do
+    user_lesson = Repo.get(UserLesson, id)
+    render conn, "show.html", user_lesson: user_lesson
+  end
+
   def delete(conn, %{"id" => id}) do
-    userLesson = Repo.get(UserLesson, id)
-    Repo.delete(userLesson)
+    user_lesson = Repo.get(UserLesson, id)
+    Repo.delete(user_lesson)
 
     conn
     |> put_flash(:info, "削除しました")

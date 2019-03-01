@@ -8,7 +8,10 @@
       <%= render "user_lesson.html", lesson: lesson, conn: @conn %>
       <%= link "Show", to: lesson_path(@conn, :show, lesson), class: "btn btn-primary btn-sm" %>
       <%= link "Edit", to: lesson_path(@conn, :edit, lesson), class: "btn btn-default btn-sm" %>
-      <%= link "Delete", to: user_lesson_path(@conn, :delete, user_lesson), class: "btn btn-danger btn-sm" %>
+       <%= button "Delete", to: user_lesson_path(@conn, :delete, user_lesson),
+            method: :delete,
+            onclick: "return confirm(\"本当に削除しますか?\");",
+            class: "btn btn-danger btn-sm" %>
  </section>
  <% end %>
  <% end %>
