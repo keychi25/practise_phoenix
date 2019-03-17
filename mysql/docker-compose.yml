@@ -1,0 +1,20 @@
+version: '2'
+services:
+    phoenix_db:
+        image: mysql:5.7
+        ports:
+            - "3344:3306"
+        command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+        environment:
+          MYSQL_DATABASE: practise_phoenix_dev
+          MYSQL_USER: root
+          MYSQL_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: root
+
+        volumes:
+            -  "./init:/docker-entrypoint-initdb.d"
+
+networks:
+  default:
+    external:
+      name: onyx

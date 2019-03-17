@@ -1,11 +1,15 @@
 <div class="row">
   <aside class="col-md-4">
+  <h3>ユーザ一覧</h3>
     <%= for user <- @users do %>
     <section>
       <%= render "user.html", user: user, conn: @conn %>
       <%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-sm" %>
     </section>
     <% end %>
+    <section>
+    <h3>ユーザ新規登録</h3>
      <%= link "Register", to: user_path(@conn, :new), class: "btn btn-primary btn-sm" %>
+     </section>
   </aside>
 </div>

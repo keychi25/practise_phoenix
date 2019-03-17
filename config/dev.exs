@@ -53,4 +53,5 @@ config :practise_phoenix, PractisePhoenix.Repo,
   password: "root",
   database: "practise_phoenix_dev",
   hostname: "localhost",
+  port: "3344",
   pool_size: 10

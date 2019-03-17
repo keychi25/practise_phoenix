@@ -2,14 +2,16 @@ defmodule PractisePhoenix.UserLessonController do
   use PractisePhoenix.Web, :controller
   alias PractisePhoenix.UserLesson
   alias PractisePhoenix.Lesson
+  alias PractisePhoenix.User
 
   plug :authenticate_user when action in [:index, :delete]
 
   def index(conn, _params) do
     user_lessons = Repo.all(UserLesson)
     lessons = Repo.all(Lesson)
+    users = Repo.all(User)
     changeset = UserLesson.changeset(%UserLesson{})
-    render conn, "index.html", user_lessons: user_lessons, lessons: lessons, changeset: changeset
+    render conn, "index.html", user_lessons: user_lessons, lessons: lessons, users: users, changeset: changeset
   end
 
   def new(conn, _params) do
@@ -23,8 +25,8 @@ defmodule PractisePhoenix.UserLessonController do
     case Repo.insert(changeset) do
       {:ok, user_lesson} ->
         conn
+        |> put_flash(:info, "登録しました")
         |> redirect(to: user_lesson_path(conn, :index))
-
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -48,6 +50,12 @@ defmodule PractisePhoenix.UserLessonController do
     user_lessons = Repo.all(UserLesson)
     lessons = Repo.all(Lesson)
     render conn, "timetable.html", user_lessons: user_lessons, lessons: lessons, id: id
+  end
+
+  def share(conn, _params) do
+    user_lessons = Repo.all(UserLesson)
+    lessons = Repo.all(Lesson)
+    render conn, "share.html", user_lessons: user_lessons, lessons: lessons
   end
 
 end

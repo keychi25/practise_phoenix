@@ -15,7 +15,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <h1><%= link "Share Timetable", to: page_path(@conn, :index) %></h1>
+        <h3><%= link "Share Timetable", to: page_path(@conn, :index) %></h3>
         <ol class="breadcrumb text-right">
           <%= if @current_user do %>
           <li><%= @current_user.name %></li>

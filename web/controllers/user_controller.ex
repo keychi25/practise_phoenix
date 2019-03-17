@@ -1,6 +1,7 @@
 defmodule PractisePhoenix.UserController do
   use PractisePhoenix.Web, :controller
   alias PractisePhoenix.User
+  alias PractisePhoenix.UserLesson
   plug :authenticate_user when action in [:index, :show, :edit, :update, :delete]
 
 def index(conn, _params) do
@@ -53,7 +54,9 @@ def index(conn, _params) do
 
   def delete(conn, %{"id" => id}) do
     user = Repo.get(User, id)
+    user_lesson = Repo.get_by(UserLesson, lesson_id: id)
     Repo.delete(user)
+    Repo.delete(user_lesson)
 
     conn
     |> put_flash(:info, "削除しました")

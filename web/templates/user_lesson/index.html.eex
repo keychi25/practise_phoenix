@@ -1,30 +1,29 @@
 <div class="row">
 <aside class="col-md-12">
-<h3>・登録済みの授業</h3>
+<h3>登録済みの授業</h3>
 <%= for user_lesson <- @user_lessons do %>
 <%= for lesson <- @lessons do %>
 <%= if user_lesson.lesson_id == lesson.id && user_lesson.user_id == @current_user.id do %>
  <section>
+ <h4>
       <%= render "user_lesson.html", lesson: lesson, conn: @conn %>
-      <%= link "Show", to: lesson_path(@conn, :show, lesson), class: "btn btn-primary btn-sm" %>
-      <%= link "Edit", to: lesson_path(@conn, :edit, lesson), class: "btn btn-default btn-sm" %>
        <%= button "Delete", to: user_lesson_path(@conn, :delete, user_lesson),
             method: :delete,
             onclick: "return confirm(\"本当に削除しますか?\");",
             class: "btn btn-danger btn-sm" %>
+            </h4>
  </section>
  <% end %>
  <% end %>
     <% end %>
-</aside>
-  <aside class="col-md-12">
-  <h3>・全ての授業</h3>
-    <%= for lesson <- @lessons do %>
-    <%= form_for @changeset, user_lesson_path(@conn, :create), fn f -> %>
+  <h3>全ての授業</h3>
+  <%= for lesson <- @lessons do %>
+    <%= form_for @changeset,user_lesson_path(@conn, :create), fn f -> %>
     <section>
-      <%= render "user_lesson.html", lesson: lesson, conn: @conn %>
+      <h4><%= render "user_lesson.html", lesson: lesson, conn: @conn %></h4>
       <%= link "Show", to: lesson_path(@conn, :show, lesson), class: "btn btn-primary btn-sm" %>
       <%= link "Edit", to: lesson_path(@conn, :edit, lesson), class: "btn btn-default btn-sm" %>
+      <%= submit "Register Lesson", class: "btn btn-success btn-sm" %>
     <div class="form-group">
       <%= hidden_input f, :user_id, value: @current_user.id, class: "form-control" %>
       <%= error_tag f, :user_id %>
@@ -33,9 +32,22 @@
       <%= hidden_input f, :lesson_id, value: lesson.id, class: "form-control" %>
       <%= error_tag f, :lesson_id %>
     </div>
-    <%= submit "Register Lesson", class: "btn btn-primary btn-sm" %>
      </section>
        <% end %>
     <% end %>
+    <section>
+    <h3>授業新規登録</h3>
+     <%= link "Register", to: lesson_path(@conn, :new), class: "btn btn-primary btn-sm" %>
+     </section>
+     <h3>時間割共有</h3>
+<%= form_for @changeset, user_lesson_path(@conn, :share), fn f -> %>
+<%= for user <- @users do %>
+<div class="form-group">
+<%= checkbox f, :user_id, value: user.name ,class: "form-control" %>
+<%= error_tag f, :user_id %>
+</div>
+<% end %>
+<%= submit "Share Timetable", class: "btn btn-success btn-sm" %>
+<% end %>
   </aside>
 </div>

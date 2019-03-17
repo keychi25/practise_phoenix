@@ -10,7 +10,6 @@ defmodule PractisePhoenix.UserLesson do
 
   @required_fields ~w(user_id lesson_id)
   @optional_fields ~w()
-
   def changeset(model, params \\ %{}) do
     model
     |> cast(params, @required_fields, @optional_fields)

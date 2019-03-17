@@ -1,6 +1,7 @@
 defmodule PractisePhoenix.LessonController do
   use PractisePhoenix.Web, :controller
   alias PractisePhoenix.Lesson
+  alias PractisePhoenix.UserLesson
 
   def index(conn, _params) do
     lessons = Repo.all(Lesson)
@@ -53,6 +54,8 @@ defmodule PractisePhoenix.LessonController do
   def delete(conn, %{"id" => id}) do
     lesson = Repo.get(Lesson, id)
     Repo.delete(lesson)
+    user_lesson = Repo.get_by(UserLesson, lesson_id: id)
+    Repo.delete(user_lesson)
 
     conn
     |> put_flash(:info, "削除しました")
